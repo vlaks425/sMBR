@@ -1,0 +1,41 @@
+[
+{
+ "name": "BLEU",
+ "score": 13.9,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.3.1",
+ "verbose_score": "50.6/21.1/10.4/5.6 (BP = 0.878 ratio = 0.885 hyp_len = 261080 ref_len = 294921)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.3.1"
+},
+{
+ "name": "chrF2",
+ "score": 43.6,
+ "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "yes",
+ "nc": "6",
+ "nw": "0",
+ "space": "no",
+ "version": "2.3.1"
+},
+{
+ "name": "TER",
+ "score": 75.1,
+ "signature": "nrefs:1|case:lc|tok:tercom|norm:no|punct:yes|asian:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "lc",
+ "tok": "tercom",
+ "norm": "no",
+ "punct": "yes",
+ "asian": "no",
+ "version": "2.3.1"
+}
+]
+/home/lr/lyu/QEBT/en-zh/zh2en/baseline/output	score: 0.7131
+Total Accuracy: 0.3629972130732202
+roberta-large_L17_idf_version=0.3.12(hug_trans=4.30.2)_fast-tokenizer P: 0.901721 R: 0.896901 F1: 0.899227

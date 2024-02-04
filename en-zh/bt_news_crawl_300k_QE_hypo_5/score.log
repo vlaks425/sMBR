@@ -1,0 +1,41 @@
+[
+{
+ "name": "BLEU",
+ "score": 33.9,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:zh|smooth:exp|version:2.3.1",
+ "verbose_score": "63.0/40.0/27.1/19.3 (BP = 1.000 ratio = 1.023 hyp_len = 408162 ref_len = 398863)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "zh",
+ "smooth": "exp",
+ "version": "2.3.1"
+},
+{
+ "name": "chrF2",
+ "score": 30.5,
+ "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "yes",
+ "nc": "6",
+ "nw": "0",
+ "space": "no",
+ "version": "2.3.1"
+},
+{
+ "name": "TER",
+ "score": 103.3,
+ "signature": "nrefs:1|case:lc|tok:tercom|norm:no|punct:yes|asian:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "lc",
+ "tok": "tercom",
+ "norm": "no",
+ "punct": "yes",
+ "asian": "no",
+ "version": "2.3.1"
+}
+]
+/home/lr/lyu/QEBT/en-zh/bt_news_crawl_300k_QE_hypo_5/output.zh	score: 0.8191
+Total Accuracy: 0.4932582798795654
+bert-base-chinese_L8_idf_version=0.3.12(hug_trans=4.30.2)_fast-tokenizer P: 0.819010 R: 0.821238 F1: 0.819716

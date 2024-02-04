@@ -1,0 +1,42 @@
+[
+{
+ "name": "BLEU",
+ "score": 25.5,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:zh|smooth:exp|version:2.3.1",
+ "verbose_score": "56.4/31.6/19.2/12.4 (BP = 1.000 ratio = 1.034 hyp_len = 412550 ref_len = 398863)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "zh",
+ "smooth": "exp",
+ "version": "2.3.1"
+},
+{
+ "name": "chrF2",
+ "score": 23.7,
+ "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "yes",
+ "nc": "6",
+ "nw": "0",
+ "space": "no",
+ "version": "2.3.1"
+},
+{
+ "name": "TER",
+ "score": 111.7,
+ "signature": "nrefs:1|case:lc|tok:tercom|norm:no|punct:yes|asian:no|version:2.3.1",
+ "nrefs": "1",
+ "case": "lc",
+ "tok": "tercom",
+ "norm": "no",
+ "punct": "yes",
+ "asian": "no",
+ "version": "2.3.1"
+}
+]
+/home/lr/lyu/QEBT/en-zh/en2zh/baseline/output.zh	score: 0.7689
+/home/lr/lyu/QEBT/en-zh/en2zh/baseline/output.zh	score: 0.7689
+Total Accuracy: 0.425317449928001
+bert-base-chinese_L8_idf_version=0.3.12(hug_trans=4.30.2)_fast-tokenizer P: 0.785468 R: 0.787827 F1: 0.786214

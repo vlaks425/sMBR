@@ -1,0 +1,35 @@
+Please refer to the following examples and then generate five rephrases for the sentences I have given you. The rephrases should maintain the exact same semantic meaning as the original.
+Original: The hacked up version of Jedi Knight was crashing because it was calling a function off the end of a vtable.
+Rephrase 1: The hacked version of Jedi Knight was crashing because it was calling a function from the end of a virtual table.
+Rephrase 2: The cracked version of Jedi Knight was crashing due to calling a function off the end of a virtual table.
+Rephrase 3: Hacked version of Jedi Knight was crashing because it called a function from the end of a virtual table.
+Rephrase 4: A hacked version of Jedi Knight was crashing because it was calling a function from the end of a virtual table.
+Rephrase 5: The hacked version of Jedi Knight was prone to crashing since it erroneously called a function that extended beyond the vtable's boundaries.
+
+Original: Xinhua Commentary: Outstanding returning rural migrant workers can be a rural revitalization army - Xinhuanet
+Rephrase 1: Xinhua Commentary: Make excellent returning migrant workers a force for rural revitalization - Xinhua News
+Rephrase 2: Xinhua comment: the outstanding returning rural migrant workers into a rural revitalization force - Xinhua News
+Rephrase 3: Xinhua Commentary: The outstanding returning migrant workers into a rural revitalization force - Xinhua News
+Rephrase 4: Xinhua Commentary: The excellent homecoming migrant workers into a rural revitalization force-Xinhua News
+Rephrase 5: Xinhua Commentary: Turning outstanding returning migrant workers into rural revitalisation force - Xinhua News
+
+Original: The victim's brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, previously a line cook in Boston, had landed his dream job as line chef at San Francisco's Sons & Daughters restaurant six months ago.
+Rephrase 1: The victim's brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, who had previously worked as a line cook in Boston, found a desirable job as a line cook at the Sons & Daughters restaurant in San Francisco six months ago.
+Rephrase 2: The victim's brother, Louis Galicia, said to ABC station KGO in San Francisco that Frank, who had previously worked as a line cook in Boston, had found a desirable job as a line cook at the Sons & Daughters restaurant in San Francisco about six months ago.
+Rephrase 3: The victim's brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, who was previously working as a line cook in Boston, found a desirable job as a line cook at the Sons & Daughters restaurant in San Francisco six months ago.
+Rephrase 4: The victim's brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, previously a line cook in Boston, had found a desirable job as a line cook at the Sons & Daughters restaurant in San Francisco just six months earlier.
+Rephrase 5: The victim's brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, who had been working as a line cook in Boston, found a desirable job as a line cook at the Sons & Daughters restaurant in San Francisco six months ago.
+
+Original: One successful gold investor recently explained to me that stock prices languished for a more than a decade before the Dow Jones index crossed the 1,000 mark in the early 1980’s.
+Rephrase 1: A successful gold investor recently explained to me that stock prices were depressed for more than a decade before the Dow Jones broke the 1,000 mark in the early 1980s.
+Rephrase 2: A successful gold investor explained to me recently that stock prices were depressed for more than a decade before the Dow Jones broke the 1,000 mark in the early 1980s.
+Rephrase 3: One successful gold investor recently explained to me that stocks had been languishing for more than a decade before the Dow Jones broke the 1,000 mark in the early 1980s.
+Rephrase 4: One successful gold investor has recently explained to me that stock prices were languishing for more than a decade before the Dow Jones broke the 1,000 mark in the early 1980s.
+Rephrase 5: One successful gold investor has recently explained to me that before the Dow Jones broke the 1,000 mark in the early 1980s, stock prices were depressed for more than a decade.
+
+Original: So it can happen anywhere.
+Rephrase 1: So it can happen anywhere.
+Rephrase 2: Therefore, it might occur anywhere.
+Rephrase 3: So it could happen anywhere.
+Rephrase 4: So , it may happen anywhere.
+Rephrase 5: It can therefore happen anywhere.
