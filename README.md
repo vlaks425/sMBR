@@ -4,7 +4,7 @@ The official repository for the ACL2025 paper: **Unveiling the Power of Source: 
 
 This repository contains the official implementation of the Source-based Minimum Bayes Risk Paraphrase-Pivoting (sMBR-PP) decoding algorithm, designed to enhance the performance of Neural Machine Translation (NMT).
 
-We demonstrate the application of sMBR-PP in NMT using the WMT2023 English-German translation task as an example. In this demonstration, the `towerinstruct-13b` model serves as the NMT model.
+We demonstrate the application of sMBR-PP in NMT using the WMT2023 English-German translation task as an example. In this demonstration, the `Unbabel/TowerInstruct-13B-v0.1` as the NMT model.
 Our experiments indicate that 48GB of GPU VRAM is sufficient to run the experiments with the parameters provided in the scripts.
 
 ## Setup and Usage
@@ -26,7 +26,7 @@ The necessary data has been pre-downloaded into the data/ directory for your con
 Models will be automatically downloaded to your Hugging Face cache directory (as configured in your environment).
 
 ## sMBR-PP Algorithm Overview
-1. **Hypothesis Generation**: We generate multiple candidate translations (hypotheses) for each source sentence using a pre-trained NMT model. In our case, we use the `towerinstruct-13b` model to generate 128 hypotheses for each source segment.
+1. **Hypothesis Generation**: We generate multiple candidate translations (hypotheses) for each source sentence using a NMT model. In our case, we use the `Unbabel/TowerInstruct-13B-v0.1` (https://huggingface.co/Unbabel/TowerInstruct-13B-v0.1) model to generate 128 hypotheses for each source sentence.
 Run sMBR-PP:
 Once hypotheses are generated, execute the `script/sMBR-PP_en2de_tower.sh` script to apply the sMBR-PP algorithm. This script takes the generated hypotheses as input and outputs the reranked translation results.
 
@@ -46,14 +46,14 @@ bash script/sMBR-PP_en2de_tower.sh
 bash script/sMBR-PP_en2de_tower.sh
 ```
 
-The `script/sMBR-PP_en2de_tower.sh` script will automatically invoke src/eval.sh for evaluation.
+The `script/sMBR-PP_en2de_tower.sh` script will automatically invoke `src/eval.sh` for evaluation.
 
 Similarly, you can run standard QE reranking using `script/qe_reranking_en2de_tower.sh` and standard MBR decoding using `script/mbr_de_tower.sh` for comparison.
 
 ## Other Language Pairs
 To experiment with other language pairs, such as English-Russian, modify the `src_file` and `tgt_file` variables in the scripts to point to the corresponding files under `data/wmt2023/`.
 
-Note: For Chinese-English translation, ensure the pp_model variable in the script is set to `lyu-boxuan/T5-sMBR-PP-ZH` due to the use of a different paraphrase generation model.
+Note: For Chinese-English translation, ensure the `pp_model` variable in the script is set to `lyu-boxuan/T5-sMBR-PP-ZH` due to the use of a different paraphrase generation model.
 
 As demonstrated in our paper's appendix, leveraging advanced Large Language Models (LLMs) like GPT-4 for paraphrase generation can further enhance sMBR-PP performance. While we do not provide a GPT-4 implementation in this repository, we believe it is straightforward to implement by referring to our code.
 
