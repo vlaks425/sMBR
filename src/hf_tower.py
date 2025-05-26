@@ -14,6 +14,7 @@ set_seed(114514)
 from tqdm import tqdm
 import torch
 import numpy as np
+from typing import  Optional, Tuple
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.benchmark = True
 torch.backends.cuda.enable_flash_sdp(True)
@@ -34,12 +35,59 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 print("Model loaded.")
 
+
+def compute_transition_scores(
+        model,
+        sequences: torch.Tensor,
+        scores: Tuple[torch.Tensor],
+        beam_indices=None,
+    ) -> torch.Tensor:
+        sequences=sequences.to("cpu")
+        # 1. In absence of `beam_indices`, we can assume that we come from e.g. greedy search, which is equivalent
+        # to a beam search approach were the first (and only) beam is always selected
+        if beam_indices is None:
+            beam_indices = torch.arange(scores[0].shape[0]).view(-1, 1).to(sequences.device)
+            beam_indices = beam_indices.expand(-1, len(scores))
+        scores = torch.stack(scores).reshape(len(scores), -1).transpose(0, 1).to("cpu")
+        scores = scores.reshape(-1, model.config.vocab_size, scores.shape[-1])
+        scores = torch.nn.functional.log_softmax(scores, dim=1)
+        scores = scores.reshape(-1, scores.shape[-1])
+
+        # 2. reshape scores as [batch_size*vocab_size, # generation steps] with # generation steps being
+        # seq_len - input_length
+
+        # 4. cut beam_indices to longest beam length
+        beam_indices_mask = beam_indices < 0
+        max_beam_length = (1 - beam_indices_mask.long()).sum(-1).max()
+        beam_indices = beam_indices.clone()[:, :max_beam_length]
+        beam_indices_mask = beam_indices_mask[:, :max_beam_length]
+
+        # 5. Set indices of beams that finished early to 0; such indices will be masked correctly afterwards
+        beam_indices[beam_indices_mask] = 0
+
+        # 6. multiply beam_indices with vocab size to gather correctly from scores
+        beam_sequence_indices = beam_indices * model.config.vocab_size
+
+        # 7. Define which indices contributed to scores
+        cut_idx = sequences.shape[-1] - max_beam_length
+        indices = sequences[:, cut_idx:] + beam_sequence_indices
+
+        # 8. Compute scores
+        transition_scores = scores.gather(0, indices)
+
+        # 9. Mask out transition_scores of beams that stopped early
+        transition_scores[beam_indices_mask] = 0
+        inf_mask = torch.isinf(transition_scores)
+        transition_scores[inf_mask] = 0
+
+        return transition_scores
+
 def get_scores(model, outputs, output_length):
-    transition_scores = model.compute_transition_scores(outputs["sequences"],outputs["scores"], normalize_logits=False).cpu().numpy()
-    length_penalty = model.generation_config.length_penalty
-    reconstructed_scores = np.sum(transition_scores, axis=1) / (output_length**length_penalty)
+    if "sequences_scores" in outputs:
+        return outputs["sequences_scores"].tolist()
+    transition_scores = compute_transition_scores(model, outputs["sequences"],outputs["scores"]).cpu().numpy()
+    reconstructed_scores = np.sum(transition_scores, axis=1) / (output_length)
     scores = reconstructed_scores.tolist()
-    #scores = outputs["sequences_scores"].tolist()
     return scores
 
 lp2prompt = {
@@ -83,7 +131,7 @@ with open(args.src_file, "r", encoding="utf-8") as f:
                     )
                     result = model.generate(
                         **line_tok,
-                        max_new_tokens=512,
+                        max_new_tokens=256,
                         num_beams=1,
                         output_scores=True,
                         return_dict_in_generate=True,
@@ -109,7 +157,7 @@ with open(args.src_file, "r", encoding="utf-8") as f:
             else:
                 result = model.generate(
                     **line_tok,
-                    max_new_tokens=512,
+                    max_new_tokens=256,
                     num_beams=1,
                     output_scores=True,
                     return_dict_in_generate=True,

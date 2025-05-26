@@ -1,0 +1,14 @@
+accelerate==1.7.0
+flash_attn==2.7.4.post1
+huggingface-hub==0.32.0
+numpy==1.26.4
+sacrebleu==2.5.1
+sentencepiece==0.2.0
+tokenizers==0.21.1
+torch==2.6.0+cu124
+torchmetrics==0.10.3
+tornado==6.5.1
+tqdm==4.67.1
+transformers==4.52.3
+triton==3.2.0
+unbabel-comet==2.2.6
