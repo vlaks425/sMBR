@@ -2,7 +2,7 @@
 
 The official repository for the ACL2025 paper: **Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation**
 
-This repository contains the official implementation of the Source-based Minimum Bayes Risk Paraphrase-Pivoting (sMBR-PP) decoding algorithm, designed to enhance the performance of Neural Machine Translation (NMT).
+This repository contains the official implementation of the Source-based Minimum Bayes Risk Paraphrase (sMBR-PP) decoding algorithm, designed to enhance the performance of Neural Machine Translation (NMT).
 
 We demonstrate the application of sMBR-PP in NMT using the WMT2023 English-German translation task as an example. In this demonstration, the `Unbabel/TowerInstruct-13B-v0.1` as the NMT model.
 Our experiments indicate that 48GB of GPU VRAM is sufficient to run the experiments with the parameters provided in the scripts.
