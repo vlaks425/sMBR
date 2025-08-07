@@ -1,6 +1,6 @@
 # sMBR
 
-The official repository for the ACL2025 paper: **Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation**
+The official repository for the ACL2025 paper: **Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation**.
 
 This repository contains the official implementation of the Source-based Minimum Bayes Risk Paraphrase (sMBR-PP) decoding algorithm, designed to enhance the performance of Neural Machine Translation (NMT).
 
@@ -60,10 +60,24 @@ Note: For Chinese-English translation, ensure the `pp_model` variable in the scr
 ## Citation
 If you find our work useful, please consider citing our paper:
 ```bibtex
-@inproceedings{lyu2025smbr,
-  title={Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation},
-  author={Boxuan Lyu and Hidetaka Kamigaito and Kotaro Funakoshi and Manabu Okumura},
-  booktitle={Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL2025)},
-  year={2025}
+@inproceedings{lyu-etal-2025-unveiling,
+    title = "Unveiling the Power of Source: Source-based Minimum {B}ayes Risk Decoding for Neural Machine Translation",
+    author = "Lyu, Boxuan  and
+      Kamigaito, Hidetaka  and
+      Funakoshi, Kotaro  and
+      Okumura, Manabu",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.149/",
+    doi = "10.18653/v1/2025.acl-long.149",
+    pages = "2976--2994",
+    ISBN = "979-8-89176-251-0",
 }
 ```
