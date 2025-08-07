@@ -1,6 +1,6 @@
 # sMBR
 
-The official repository for the ACL2025 paper: **Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation**.
+The official repository for our ACL2025 paper: **[Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation](https://aclanthology.org/2025.acl-long.149/)**.
 
 This repository contains the official implementation of the Source-based Minimum Bayes Risk Paraphrase (sMBR-PP) decoding algorithm, designed to enhance the performance of Neural Machine Translation (NMT).
 
