@@ -41,7 +41,7 @@ To run the sMBR-PP algorithm, run the following command:
 ### Generate Hypotheses
 The following script uses epsilon samping (epsilon=0.02) to generate 128 hypotheses for each source.
 ```bash
-bash script/sMBR-PP_en2de_tower.sh
+bash script/gen_hypo_tower_en2de.sh
 ```
 ### sMBR-PP Reranking (with Paraphrase Generation) and Evaluation
 ```bash
